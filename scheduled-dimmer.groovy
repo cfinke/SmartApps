@@ -52,6 +52,8 @@ def examplePage() {
 			log.debug "Switch is chosen; generating schedule1."
 
 			section {
+				paragraph "Set up to three scheduled dimmer levels. They must be entered in order, the earliest one first."
+
 				input(
 					name: "schedule1",
 					type: "time",
