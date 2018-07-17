@@ -202,11 +202,11 @@ def setDefaultLevel() {
 	def endTime = schedule1
 	def endOfDayLevel = level1
 	def lastOffDate = null
-	
+
 	if (state.lastOff) {
 		lastOffDate = Date.parse("yyyy-MM-dd'T'HH:mm:ssZ", state.lastOff)
 	}
-	
+
 	def now = new Date()
 
 	if (schedule3 && level3) {
