@@ -63,12 +63,14 @@ def examplePage() {
 				input(
 					name: "level1",
 					type: "number",
-					range: 1..100,
-					title: "Set brightness to...",
+					title: "Set brightness to... (0-100)",
+					range: "0..100",
 					required: true,
 					submitOnChange: true
 				)
 			}
+
+			log.debug "schedule1 generated."
 
 			if (schedule1 && level1) {
 				log.debug "schedule1 is chosen; generating schedule2."
@@ -83,13 +85,17 @@ def examplePage() {
 					input(
 						name: "level2",
 						type: "number",
-						range: 1..100,
-						title: "Set brightness to...",
+						title: "Set brightness to... (0-100)",
+						range: "0..100",
 						required: false,
 						submitOnChange: true
 					)
 				}
+
+				log.debug "schedule2 generated."
 			}
+
+			log.debug "Done checking for schedule2"
 
 			if (schedule2 && level2) {
 				log.debug "schedule2 is chosen; generating schedule3."
@@ -104,14 +110,20 @@ def examplePage() {
 					input(
 						name: "level3",
 						type: "number",
-						range: 1..100,
-						title: "Set brightness to...",
+						title: "Set brightness to... (0-100)",
+						range: "0..100",
 						required: false
 					)
 				}
+
+				log.debug "schedule3 generated."
 			}
+			log.debug "Done checking for schedule3"
 		}
+
 	}
+
+//	log.debug "Leaving examplePage"
 }
 
 def installed() {
